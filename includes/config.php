@@ -39,7 +39,7 @@ const HOURS = [
 // זמן חזרה ללקוח – מופיע בכותרות ובכפתורים
 const RESPONSE_TIME = 'חצי שעה';
 // תגית הזמינות שמעל הכותרת הראשית
-const AVAILABILITY_BADGE = 'זמינים מהיום למחר';
+const AVAILABILITY_BADGE = 'זמינים מהיום להיום';
 
 // ---- מעקב ופרסום (ריק = כבוי) ----
 const GOOGLE_ADS_ID = '';   // למשל AW-123456789
