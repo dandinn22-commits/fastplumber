@@ -1,0 +1,27 @@
+name: fetch-images
+on:
+  push:
+    branches: [image-fetch]
+    paths: ['image-urls.txt']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and convert
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq webp imagemagick >/dev/null
+          mkdir -p raw
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -fsSL "$url" -o "raw/$name.png"
+          done < image-urls.txt
+          ls -la raw
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add raw
+          git commit -m "Add downloaded images" && git push
