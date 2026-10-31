@@ -1,6 +1,1 @@
-hero https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_214953_79fb2040-9e3d-426c-93e9-0fc637b4785b.png
-shower https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_214954_09f1419e-15d9-4a4d-9002-217e0376c1da.png
-heater https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_214953_21970fbc-6aee-40ea-934e-16ab19b1028e.png
-leak https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_214955_f20b095c-5a8e-4e08-9a22-b202f178c50d.png
-drain https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_214954_67331204-4141-4c47-867c-1e2905a89629.png
-toilet https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_214954_0e50e255-e020-4623-9932-9149a1be2857.png
+hero-wide https://d8j0ntlcm91z4.cloudfront.net/user_3H6cRkwQ6uQLwjaqbyllL7c66jQ/hf_20261031_215305_6af6a046-86ce-49e8-8a41-57b747f5e01c.png
