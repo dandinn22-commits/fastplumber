@@ -524,7 +524,7 @@ function access_widget() { ?>
 
 function site_footer() { ?>
 <footer>
-<div class="footer-logo"><img src="/assets/logo.svg" alt="<?= e(SITE_NAME) ?>" width="42" height="42" loading="lazy"></div>
+<div class="footer-logo"><img src="/assets/icon.svg" alt="<?= e(SITE_NAME) ?>" width="42" height="42" loading="lazy"></div>
 <nav class="footer-cities" aria-label="אזורי שירות">
 <?php foreach (CITIES as $slug => $c): ?>
 <a href="/<?= $slug ?>/">אינסטלטור <?= e($c['in']) ?></a>
@@ -551,7 +551,7 @@ function page_end($anchor = '#quoteForm') {
 function topbar() { ?>
 <header class="topbar">
 <div class="topbar-inner">
-<a class="topbar-brand" href="/"><img src="/assets/logo.svg" alt="" width="44" height="44"><?= e(SITE_NAME) ?></a>
+<a class="topbar-brand" href="/"><img src="/assets/icon.svg" alt="" width="44" height="44"><?= e(SITE_NAME) ?></a>
 <a class="topbar-call" href="tel:<?= PHONE_TEL ?>">התקשרו: <span dir="ltr"><?= PHONE_DISPLAY ?></span></a>
 </div>
 </header>
