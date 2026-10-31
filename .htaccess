@@ -1,0 +1,54 @@
+# ===== אינסטלטור ברגע – הגדרות שרת (Apache / Hostinger) =====
+Options -Indexes
+DirectoryIndex index.php
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# הפניה ל-https ולכתובת בלי www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# מפת אתר ו-robots דינמיים
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^robots\.txt$ robots.php [L]
+
+# כתובות ישנות עם .html (למקרה שמישהו מקשר אליהן)
+RewriteRule ^(accessibility|privacy|thank-you)\.html$ /$1/ [L,R=301]
+
+# חסימת גישה לקבצי הגדרות, תבניות ולידים
+RewriteRule ^(includes|data|raw|\.git)(/|$) - [F,L]
+RewriteRule (^|/)\.(?!well-known) - [F,L]
+</IfModule>
+
+<FilesMatch "\.(csv|txt|md|log|sh|yml)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
+# אבטחה בסיסית
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# דחיסה ומטמון
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain application/json
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>

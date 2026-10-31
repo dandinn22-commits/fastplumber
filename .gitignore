@@ -1,0 +1,4 @@
+raw/
+data/*.csv
+data/rate-*
+.DS_Store
