@@ -35,5 +35,6 @@ page_head(['title' => 'תודה שהשארתם פרטים – ' . SITE_NAME, 'pa
   } catch(e) {}
 })();
 </script>
+<script src="/lead-alerts.js?v=1" data-brand="אינסטלטור ברגע" defer></script>
 </body>
 </html>

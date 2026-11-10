@@ -14,6 +14,7 @@ function simple_page($title, $path, $h1, $bodyHtml) {
     access_widget();
     site_footer(); ?>
 <script src="/assets/site.js?v=<?= @filemtime(__DIR__ . '/../assets/site.js') ?>"></script>
+<script src="/lead-alerts.js?v=1" data-brand="אינסטלטור ברגע" defer></script>
 </body>
 </html>
 <?php }

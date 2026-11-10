@@ -11,5 +11,6 @@ page_head(['title' => 'העמוד לא נמצא – ' . SITE_NAME, 'path' => '/4
     <div class="emergency-note"><a class="back-home" href="/">לדף הבית</a> · <a href="tel:<?= PHONE_TEL ?>" dir="ltr"><?= PHONE_DISPLAY ?></a></div>
   </div>
 </main>
+<script src="/lead-alerts.js?v=1" data-brand="אינסטלטור ברגע" defer></script>
 </body>
 </html>
