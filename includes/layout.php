@@ -325,12 +325,12 @@ function lead_form($formId, $prefix, $source, $card = false) {
 
 function services() {
     return [
-        ['icon' => 'drain',  'title' => 'פתיחת סתימות',          'text' => 'כיורים, מקלחות, אסלות וקווי ביוב – פותחים את הסתימה ובודקים למה היא נוצרה.', 'guide' => 'blocked-drain'],
-        ['icon' => 'leak',   'title' => 'איתור ותיקון נזילות',    'text' => 'מאתרים את מקור הנזילה ופותחים רק את מה שצריך, כדי לחסוך שבירה מיותרת.', 'guide' => 'water-leak'],
-        ['icon' => 'faucet', 'title' => 'ברזים וסוללות',          'text' => 'תיקון ברז מטפטף, החלפת סוללה במטבח או במקלחת, והתקנת ברזים חדשים.', 'guide' => ''],
-        ['icon' => 'heater', 'title' => 'תיקוני דודים',              'text' => 'תיקון דודי שמש ודודי חשמל: גוף חימום, תרמוסטט, ברזי דוד וצנרת הדוד. קודם מאתרים את התקלה, ואז מתקנים.', 'guide' => 'water-heater'],
-        ['icon' => 'toilet', 'title' => 'אסלות וניאגרות',          'text' => 'ניאגרה שלא מפסיקה לזרום, אסלה שזזה או דולפת, והתקנת אסלה חדשה.', 'guide' => ''],
-        ['icon' => 'pipe',   'title' => 'צנרת ושיפוצים',           'text' => 'החלפת צנרת ישנה, הכנה למטבח או לאמבטיה חדשים, וחיבור כלים סניטריים.', 'guide' => 'renovation-plumbing'],
+        ['icon' => 'drain',  'title' => 'פתיחת סתימות',          'text' => 'כיורים, מקלחות, אסלות וקווי ביוב – פותחים את הסתימה ובודקים למה היא נוצרה.', 'guide' => 'blocked-drain', 'alt' => 'אינסטלטור פותח סתימה בכיור המטבח עם קפיץ חשמלי'],
+        ['icon' => 'leak',   'title' => 'איתור ותיקון נזילות',    'text' => 'מאתרים את מקור הנזילה ופותחים רק את מה שצריך, כדי לחסוך שבירה מיותרת.', 'guide' => 'water-leak', 'alt' => 'איתור נזילה בקיר חדר רחצה עם מצלמה תרמית'],
+        ['icon' => 'faucet', 'title' => 'ברזים וסוללות',          'text' => 'תיקון ברז מטפטף, החלפת סוללה במטבח או במקלחת, והתקנת ברזים חדשים.', 'guide' => '', 'alt' => 'התקנת ברז חדש במטבח'],
+        ['icon' => 'heater', 'title' => 'תיקוני דודים',              'text' => 'תיקון דודי שמש ודודי חשמל: גוף חימום, תרמוסטט, ברזי דוד וצנרת הדוד. קודם מאתרים את התקלה, ואז מתקנים.', 'guide' => 'water-heater', 'alt' => 'תיקון גוף חימום בדוד חשמל במרפסת שירות'],
+        ['icon' => 'toilet', 'title' => 'אסלות וניאגרות',          'text' => 'ניאגרה שלא מפסיקה לזרום, אסלה שזזה או דולפת, והתקנת אסלה חדשה.', 'guide' => '', 'alt' => 'תיקון מנגנון הניאגרה באסלה'],
+        ['icon' => 'pipe',   'title' => 'צנרת ושיפוצים',           'text' => 'החלפת צנרת ישנה, הכנה למטבח או לאמבטיה חדשים, וחיבור כלים סניטריים.', 'guide' => 'renovation-plumbing', 'alt' => 'החלפת קטע צנרת ישן בתוך קיר'],
     ];
 }
 
@@ -344,7 +344,8 @@ function services_section($cityIn = '') { ?>
 </div>
 <div class="why-grid services-grid">
 <?php foreach (services() as $s): ?>
-<div class="why-card">
+<div class="why-card service-card">
+<img class="service-img" src="/assets/service-<?= $s['icon'] ?>.webp" alt="<?= e($s['alt']) ?>" width="800" height="600" loading="lazy" decoding="async">
 <div class="why-icon"><?= icon($s['icon']) ?></div>
 <h3><?= e($s['title']) ?></h3>
 <p><?= e($s['text']) ?><?php if ($s['guide']): ?> <a href="/guides/<?= $s['guide'] ?>/">למדריך</a><?php endif; ?></p>

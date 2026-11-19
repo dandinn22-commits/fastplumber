@@ -1565,3 +1565,9 @@ html{scroll-padding-top:52px;}
 .topbar-brand{white-space:nowrap;}
 @media (max-width:420px){.topbar-brand{font-size:16px;gap:8px;}.topbar-brand img{width:36px;height:36px;}.topbar-call{font-size:13px;padding:8px 12px;white-space:nowrap;}}
 .topbar-brand img{border-radius:22%;}.footer-logo img{border-radius:22%;}
+
+/* תמונות בכרטיסי השירותים */
+.service-card{padding:0 0 24px;overflow:hidden;}
+.service-card .service-img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;}
+.service-card .why-icon{margin:-30px auto 14px;position:relative;border:3px solid #fff;}
+.service-card h3, .service-card p{padding:0 20px;}
