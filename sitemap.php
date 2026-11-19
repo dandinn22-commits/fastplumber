@@ -4,6 +4,7 @@ require __DIR__ . '/includes/layout.php';
 header('Content-Type: application/xml; charset=utf-8');
 $urls = ['/' => '1.0'];
 foreach (CITIES as $slug => $c) $urls["/$slug/"] = '0.8';
+$urls['/biuvit/'] = '0.8';
 $urls['/guides/'] = '0.6';
 foreach (GUIDES as $slug => $t) $urls["/guides/$slug/"] = '0.6';
 $urls['/accessibility/'] = '0.2';

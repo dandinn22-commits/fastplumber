@@ -304,6 +304,7 @@ function lead_form($formId, $prefix, $source, $card = false) {
       <select id="<?= $issueId ?>" name="issue">
         <option value="">בחרו מהרשימה</option>
         <option>סתימה</option>
+        <option>ביובית / ביוב ראשי</option>
         <option>נזילה / רטיבות</option>
         <option>ברז או סוללה</option>
         <option>דוד מים</option>
@@ -532,7 +533,7 @@ function site_footer() { ?>
 <?php endforeach; ?>
 </nav>
 <p><?= e(SITE_NAME) ?> · אינסטלציה לבית ולעסק באזור המרכז © <?= date('Y') ?></p>
-<p class="footer-links"><a href="tel:<?= PHONE_TEL ?>" dir="ltr"><?= PHONE_DISPLAY ?></a> · <a href="/accessibility/">הצהרת נגישות</a> · <a href="/privacy/">מדיניות פרטיות</a> · <a href="/guides/">מדריכים</a><?php foreach (GUIDES as $slug => $t): ?> · <a href="/guides/<?= $slug ?>/"><?= e($t) ?></a><?php endforeach; ?></p>
+<p class="footer-links"><a href="tel:<?= PHONE_TEL ?>" dir="ltr"><?= PHONE_DISPLAY ?></a> · <a href="/accessibility/">הצהרת נגישות</a> · <a href="/privacy/">מדיניות פרטיות</a> · <a href="/biuvit/">ביובית</a> · <a href="/guides/">מדריכים</a><?php foreach (GUIDES as $slug => $t): ?> · <a href="/guides/<?= $slug ?>/"><?= e($t) ?></a><?php endforeach; ?></p>
 </footer>
 <?php }
 
