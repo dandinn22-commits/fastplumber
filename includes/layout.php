@@ -406,7 +406,7 @@ function reviews_section() {
           <div class="review-card" dir="rtl">
             <div class="review-stars" aria-label="<?= $stars ?> מתוך 5"><?= str_repeat('★', $stars) . str_repeat('☆', 5 - $stars) ?></div>
             <p class="review-text"><?= e($r['text']) ?></p>
-            <div class="review-author"><div class="review-avatar"><?= e(mb_substr($r['name'], 0, 1)) ?></div><?= e($r['name']) ?></div>
+            <div class="review-author"><div class="review-avatar"><?= e(mb_substr($r['name'], 0, 1)) ?></div><?= e($r['name']) ?><?php if (!empty($r['city'])): ?><span class="review-city"> · <?= e($r['city']) ?></span><?php endif; ?></div>
           </div>
 <?php endforeach; ?>
         </div>
