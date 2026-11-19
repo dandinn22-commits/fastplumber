@@ -328,7 +328,7 @@ function services() {
         ['icon' => 'drain',  'title' => 'פתיחת סתימות',          'text' => 'כיורים, מקלחות, אסלות וקווי ביוב – פותחים את הסתימה ובודקים למה היא נוצרה.', 'guide' => 'blocked-drain'],
         ['icon' => 'leak',   'title' => 'איתור ותיקון נזילות',    'text' => 'מאתרים את מקור הנזילה ופותחים רק את מה שצריך, כדי לחסוך שבירה מיותרת.', 'guide' => 'water-leak'],
         ['icon' => 'faucet', 'title' => 'ברזים וסוללות',          'text' => 'תיקון ברז מטפטף, החלפת סוללה במטבח או במקלחת, והתקנת ברזים חדשים.', 'guide' => ''],
-        ['icon' => 'heater', 'title' => 'דודי שמש ודודי חשמל',     'text' => 'תיקון והחלפה של דודים, ברזי דוד וצנרת הדוד, כולל בדיקת התקלה לפני הכול.', 'guide' => 'water-heater'],
+        ['icon' => 'heater', 'title' => 'תיקוני דודים',              'text' => 'תיקון דודי שמש ודודי חשמל: גוף חימום, תרמוסטט, ברזי דוד וצנרת הדוד. קודם מאתרים את התקלה, ואז מתקנים.', 'guide' => 'water-heater'],
         ['icon' => 'toilet', 'title' => 'אסלות וניאגרות',          'text' => 'ניאגרה שלא מפסיקה לזרום, אסלה שזזה או דולפת, והתקנת אסלה חדשה.', 'guide' => ''],
         ['icon' => 'pipe',   'title' => 'צנרת ושיפוצים',           'text' => 'החלפת צנרת ישנה, הכנה למטבח או לאמבטיה חדשים, וחיבור כלים סניטריים.', 'guide' => 'renovation-plumbing'],
     ];
@@ -597,10 +597,10 @@ function photos_section() { ?>
     <div class="photo-strip">
       <figure><img src="/assets/photo-drain.webp" alt="אינסטלטור פותח סתימה בכיור בחדר רחצה" width="1200" height="900" loading="lazy" decoding="async"><figcaption>פתיחת סתימות</figcaption></figure>
       <figure><img src="/assets/photo-leak.webp" alt="בדיקת רטיבות בקיר עם מד לחות" width="1200" height="900" loading="lazy" decoding="async"><figcaption>איתור נזילות</figcaption></figure>
-      <figure><img src="/assets/photo-heater.webp" alt="בדיקת דוד שמש על גג בניין" width="1200" height="900" loading="lazy" decoding="async"><figcaption>דודי שמש וחשמל</figcaption></figure>
+      <figure><img src="/assets/photo-heater.webp" alt="בדיקת דוד שמש על גג בניין" width="1200" height="900" loading="lazy" decoding="async"><figcaption>תיקוני דודים</figcaption></figure>
       <figure><img src="/assets/photo-shower.webp" alt="התקנת סוללה במקלחת" width="1200" height="900" loading="lazy" decoding="async"><figcaption>ברזים וסוללות</figcaption></figure>
       <figure><img src="/assets/photo-toilet.webp" alt="התקנת אסלה תלויה בחדר רחצה משופץ" width="1200" height="900" loading="lazy" decoding="async"><figcaption>אסלות ושיפוצים</figcaption></figure>
-      <figure><img src="/assets/photo-kitchen.webp" alt="תיקון צנרת מתחת לכיור במטבח" width="1200" height="900" loading="lazy" decoding="async"><figcaption>צנרת במטבח</figcaption></figure>
+      <figure><img src="/assets/photo-kitchen.webp" alt="תיקון צנרת מתחת לכיור במטבח" width="1200" height="900" loading="lazy" decoding="async"><figcaption>תיקוני צנרת</figcaption></figure>
     </div>
   </div>
 </section>
@@ -614,7 +614,7 @@ function home_faqs() {
         ['אתם נותנים שירות חירום?', 'כן. בפיצוץ צינור, הצפה או ביוב שעולה – התקשרו ונעשה הכול כדי להגיע מהר. עד שנגיע, סגרו את ברז המים הראשי.'],
         ['כמה עולה ביקור של אינסטלטור?', 'המחיר תלוי בסוג התקלה. בשיחה נשאל כמה שאלות, ואם אפשר נבקש תמונה, כדי לתת לכם מחיר לפני שמגיעים.'],
         ['אתם מאתרים נזילות בלי לשבור?', 'אנחנו משתמשים בכלים לאיתור רטיבות ונזילות, כדי לפתוח רק במקום הנכון ולחסוך שבירה מיותרת.'],
-        ['אתם מטפלים בדודי שמש?', 'כן – דודי שמש ודודי חשמל: גוף חימום, תרמוסטט, ברזי דוד, נזילות והחלפת דוד.'],
+        ['אתם מתקנים דודים?', 'כן – אנחנו מתקנים דודי שמש ודודי חשמל: גוף חימום, תרמוסטט, ברזי דוד ונזילות מהדוד ומהצנרת שלו.'],
         ['יש אחריות על העבודה?', 'כן, יש אחריות מלאה על כל עבודה שאנחנו מבצעים. תנאי האחריות מופיעים בהצעת המחיר.'],
         ['לאילו ערים אתם מגיעים?', 'ל' . cities_list_text() . '. גרים בעיר אחרת? התקשרו ונבדוק.'],
     ];
