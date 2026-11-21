@@ -31,6 +31,13 @@ RewriteRule (^|/)\.(?!well-known) - [F,L]
   </IfModule>
 </FilesMatch>
 
+# מפתח IndexNow (בינג) – מותר לגישה למרות חסימת קובצי txt
+<Files "002f933d59c821a8b9c762d51312c15e.txt">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+</Files>
+
 # אבטחה בסיסית
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"

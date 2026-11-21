@@ -1,0 +1,30 @@
+name: indexnow
+# אחרי כל עדכון לאתר: מודיע לבינג (ולמנועים נוספים) דרך IndexNow על כל הדפים שבמפת האתר
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Hostinger deploy
+        run: sleep 120
+
+      - name: Submit sitemap URLs to IndexNow
+        env:
+          HOST: plumberinsecond.com
+          KEY: 002f933d59c821a8b9c762d51312c15e
+        run: |
+          set -e
+          # בדיקה שקובץ המפתח זמין באתר
+          curl -fsS "https://$HOST/$KEY.txt" | grep -q "$KEY"
+          # כל הכתובות ממפת האתר
+          URLS=$(curl -fsS "https://$HOST/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<\/\?loc>//g')
+          JSON=$(printf '%s\n' "$URLS" | python3 -c 'import json,sys,os; u=[l.strip() for l in sys.stdin if l.strip()]; print(json.dumps({"host":os.environ["HOST"],"key":os.environ["KEY"],"keyLocation":f"https://{os.environ["HOST"]}/{os.environ["KEY"]}.txt","urlList":u}))')
+          echo "Submitting $(printf '%s\n' "$URLS" | wc -l) URLs"
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' -X POST "https://api.indexnow.org/indexnow" \
+            -H 'Content-Type: application/json; charset=utf-8' -d "$JSON")
+          echo "IndexNow response: $CODE"
+          [ "$CODE" = "200" ] || [ "$CODE" = "202" ]
