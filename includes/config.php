@@ -42,6 +42,8 @@ const RESPONSE_TIME = 'חצי שעה';
 const AVAILABILITY_BADGE = 'זמינים מהיום להיום';
 
 // ---- מעקב ופרסום (ריק = כבוי) ----
+// Google Tag Manager – המיכל של האתר. ריק = כבוי.
+const GTM_ID = 'GTM-M6RD457Z';
 const GOOGLE_ADS_ID = '';   // למשל AW-123456789
 const GA4_ID        = '';   // למשל G-ABC123
 // תוויות המרה של גוגל אדס (החלק שאחרי הלוכסן ב-send_to)

@@ -23,7 +23,11 @@
 
   var GA4_EVENTS = { form: 'generate_lead', call: 'click_call', whatsapp: 'click_whatsapp' };
 
+  // אירועים לתגיות ב-Google Tag Manager: lead_form / click_call / click_whatsapp
+  var GTM_EVENTS = { form: 'lead_form', call: 'click_call', whatsapp: 'click_whatsapp' };
+
   window.trackConversion = function(kind){
+    try { window.dataLayer.push({ event: GTM_EVENTS[kind] || kind, lead_type: kind, page_path: location.pathname, from_ads: !!window.fromAds }); } catch(e) {}
     try {
       if (ADS_ID && LABELS[kind]) gtag('event', 'conversion', { send_to: ADS_ID + '/' + LABELS[kind] });
       if (GA4_ID) gtag('event', GA4_EVENTS[kind] || kind, { page_path: location.pathname });
